@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>谢舒迪 · 个人主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f7f5f2;
+            color: #1a1a1a;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .header {
+            padding: 72px 0 56px;
+            border-bottom: 1px solid #e0dbd5;
+        }
+
+        .header h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            color: #6b6560;
+        }
+
+        .header .badge {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 6px 16px;
+            background: #1a1a1a;
+            color: #f7f5f2;
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .section {
+            padding: 48px 0;
+            border-bottom: 1px solid #e0dbd5;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #a09890;
+            font-weight: 600;
+            margin-bottom: 28px;
+        }
+
+        .intro-text {
+            font-size: 1.15rem;
+            color: #3d3833;
+            max-width: 620px;
+        }
+
+        .intro-text em {
+            font-style: normal;
+            border-bottom: 2px solid #d4cbc3;
+            padding-bottom: 1px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 6px;
+            bottom: 6px;
+            width: 1.5px;
+            background: #d4cbc3;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #f7f5f2;
+            border: 2px solid #1a1a1a;
+        }
+
+        .timeline-item.highlight::before {
+            background: #1a1a1a;
+        }
+
+        .timeline-period {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #a09890;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .timeline-title {
+            font-size: 1.12rem;
+            font-weight: 650;
+            margin-bottom: 4px;
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: #5c5650;
+            max-width: 580px;
+        }
+
+        .timeline-desc p {
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc p:last-child {
+            margin-bottom: 0;
+        }
+
+        .placeholder-note {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 0.82rem;
+            color: #b5ada5;
+            font-style: italic;
+        }
+
+        .quote-block {
+            margin: 32px 0 0;
+            padding: 24px 28px;
+            background: #eeeae6;
+            border-left: 3px solid #1a1a1a;
+            font-size: 1rem;
+            color: #3d3833;
+            font-style: italic;
+        }
+
+        .trait-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .trait-tag {
+            padding: 8px 18px;
+            background: #eeeae6;
+            color: #3d3833;
+            font-size: 0.88rem;
+            border-radius: 100px;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-item {
+            font-size: 0.95rem;
+            color: #5c5650;
+        }
+
+        .contact-item strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .footer {
+            padding: 40px 0 56px;
+            font-size: 0.82rem;
+            color: #b5ada5;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                padding: 48px 0 40px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 36px 0;
+            }
+
+            .timeline {
+                padding-left: 26px;
+            }
+
+            .timeline-item::before {
+                left: -26px;
+                width: 12px;
+                height: 12px;
+            }
+
+            .quote-block {
+                padding: 20px 20px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <h1>谢舒迪</h1>
+        <div class="subtitle">湖南大学 · 金融与统计学院</div>
+        <div class="badge">2025 级本科生</div>
+    </header>
+
+    <section class="section">
+        <div class="section-label">关于我</div>
+        <div class="intro-text">
+            湖南大学金融与统计学院 2025 级本科生。两年前初访岳麓书院，湖大便成为我的<em>“梦中情校”</em>。相信“振我民族，扬我国光”应是湖大青年的人生锚点，以立德笃行、经世济民为宏图之志。
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-label">成长履历</div>
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-period">小学阶段</div>
+                <div class="timeline-title">基础教育启蒙</div>
+                <div class="timeline-desc">
+                    <p class="placeholder-note">（待补充）</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-period">初中阶段</div>
+                <div class="timeline-title">淄博大学城实验中学</div>
+                <div class="timeline-desc">
+                    <p>2021 年获评周村区“新时代好少年”[citation:9][citation:17]</p>
+                    <p>获评淄博市优秀学生干部[citation:5]</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-period">高中阶段</div>
+                <div class="timeline-title">淄博第六中学</div>
+                <div class="timeline-desc">
+                    <p><strong>国防教育知识竞赛一等奖</strong> · 2023 年</p>
+                    <p>获淄博市中小学国防教育知识竞赛高中组一等奖第一名[citation:8]</p>
+                    <p><strong>校学生会主席</strong> · 2023 年</p>
+                    <p>担任淄博六中 2023 届学生会主席，主持“缅怀革命先烈”主题升旗仪式[citation:13]</p>
+                    <p><strong>毕业典礼主持人</strong> · 2025 年</p>
+                    <p>主持淄博六中 2022 级毕业典礼[citation:4]</p>
+                </div>
+            </div>
+
+            <div class="timeline-item highlight">
+                <div class="timeline-period">2025 年 9 月 — 至今</div>
+                <div class="timeline-title">湖南大学 · 金融与统计学院</div>
+                <div class="timeline-desc">
+                    <p><strong>本科新生代表发言</strong> · 2025 年 9 月</p>
+                    <p>在湖南大学 2025 级新生开学典礼上作为本科新生代表发言，表达“振我民族，扬我国光”的志向。</p>
+                    <p><strong>参与学院宣传工作</strong> · 2025 年 12 月</p>
+                    <p>作为金统院作者之一，参与学院获奖新闻的采写与供稿。</p>
+                    <p><strong>“三下乡”社会实践</strong> · 2026 年 8 月</p>
+                    <p>参与青春“三下乡”社会实践，走访企业一线，调研乡村 AI 发展，并参与摄影记录。</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="quote-block">
+            “勇敢去尝试、去探索，在这片千年文脉的土地上，定义属于自己的时代。”
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-label">关键词</div>
+        <div class="trait-grid">
+            <span class="trait-tag">金融与统计</span>
+            <span class="trait-tag">新生代表</span>
+            <span class="trait-tag">学生会主席</span>
+            <span class="trait-tag">国防知识竞赛</span>
+            <span class="trait-tag">新时代好少年</span>
+            <span class="trait-tag">社会实践</span>
+            <span class="trait-tag">经世济民</span>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-label">联系</div>
+        <div class="contact-row">
+            <div class="contact-item"><strong>学院：</strong>湖南大学金融与统计学院</div>
+            <div class="contact-item"><strong>年级：</strong>2025 级本科</div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        © 2026 谢舒迪 · 个人主页
+    </footer>
+
+</div>
+
+</body>
+</html>
